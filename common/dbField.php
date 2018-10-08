@@ -7,15 +7,16 @@
  */
 
 
-class dbTable
+class dbField
 {
     public $name;
     public $type;
+    public $isPrimary;
+
 
     public function __construct($name, $type)
     {
         $this->type = $type;
         $this->name = $name;
-
     }
 }

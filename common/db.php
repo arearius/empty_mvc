@@ -37,6 +37,24 @@ class Db
         self::$connection->query($sql);
     }
 
+    protected static function createTable($name, $fields, $primaryKey)
+    {
+        $sql = "CREATE TABLE `{$name}` (";
+        $fieldNumber = 0;
+        foreach ($fields as $field) {
+            if ($fieldNumber < count($fields) - 1) {
+                $sql += "`{$field->name}` {$field->type}, ";
+            }
+            $sql += "`{$field->name}` {$field->type} ";
+        }
+
+        $sql += " PRIMARY KEY(`{$primaryKey})";
+        echo "trying create table $sql";
+
+        //self::$connection->query($sql);
+
+    }
+
     protected static function getAllFromTable($table)
     {
         $sql = "SELECT * FROM $table";

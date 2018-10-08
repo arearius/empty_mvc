@@ -29,5 +29,18 @@ class Fonds extends db
 
     }
 
+    public function createFondsTable()
+    {
+        $fields = array();
+
+        $fields[] = new dbField('id', 'INT(11) NOT NULL AUTO_INCREMENT');
+        $fields[] = new dbField('text', 'LONGTEXT NOT NULL');
+
+        $primaryKay = "PRIMARY KEY(`id`)";
+
+        parent::createTable("data", $fields, $primaryKay);
+
+    }
+
 
 }

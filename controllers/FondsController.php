@@ -22,4 +22,12 @@ class FondsController extends Controller
         echo $this->view('index');
     }
 
+    function dbinitAction($param){
+
+        $this->logger->log("FondsController dbinitAction");
+        $this->setTitle("Фонды");
+
+        echo $this->view('index');
+    }
+
 }
